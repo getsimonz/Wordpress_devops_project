@@ -15,7 +15,7 @@ spec:
         app: wordpress
     spec:
       containers:
-        - image: vcubefame/wordpress:v11.2
+        - image: sharlton/wordpress:v11.2
           name: wordpress
           env:
           - name: WORDPRESS_DB_HOST
