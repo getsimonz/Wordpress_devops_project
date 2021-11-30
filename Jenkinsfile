@@ -1,8 +1,5 @@
 node{
-  environment {
-    dockerpass = "dockerid"
-  
-  }
+
 
   //Define all variables
   def project = 'wordpress_app'
