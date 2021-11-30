@@ -45,10 +45,10 @@ node{
 
                           // Create K8 Services
 
-
+                          timeout(5) 
                           }
-    // Stage 5 : Wait for services to be up or for 120 retries
-    timeout(5) 
+              // Stage 5 : Wait for services to be up or for 120 retries
+              
               }
 
 }
