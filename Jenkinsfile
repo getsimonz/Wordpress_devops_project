@@ -48,11 +48,11 @@ node{
                           sh("kubectl apply -k .")
 
                           // Check for Service
-                            sh("url_c=`minikube service wordpress --url`")
-                            sh("kubectl get pods -o=wide")
-                            sh("NAME=`minikube service list|grep wordpress |awk '{print ''\$''6}'`")
+                          sh("url_c=`minikube service wordpress --url`")
+                          sh("kubectl get pods -o=wide")
+                          sh("NAME=`minikube service list|grep wordpress |awk '{print ''\$''6}'`")
 
-                            }
+                          }
     // Stage 5 : Wait for services to be up or for 120 retries
     timeout(5) {
     waitUntil {
