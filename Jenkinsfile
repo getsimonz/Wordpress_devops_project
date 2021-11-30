@@ -1,4 +1,8 @@
 node{
+  environment {
+    dockerpass = "dockerid"
+  
+  }
 
   //Define all variables
   def project = 'wordpress_app'
@@ -11,8 +15,8 @@ node{
 
   //Stage 1 : Build the docker image.
         stage('Build image') {
-            
-            sh("docker build -t sharlton/${imageTag} wordpress_app/.")
+            sh("docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD")
+            sh("docker build -t getsimonz/${imageTag} wordpress_app/.")
         }
     //Stage 2 : Testing the code.
         stage('Testing the code') {
@@ -22,7 +26,7 @@ node{
 
     //Stage 3 : Push the image to docker registry
         stage('Push image to registry') {
-            sh("docker push sharlton/${imageTag}")
+            sh("docker push getsimonz/${imageTag}")
         }
 
     //Stage 3 : Clean the old images
