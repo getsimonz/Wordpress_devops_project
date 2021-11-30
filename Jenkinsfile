@@ -50,6 +50,5 @@ node{
     // Stage 5 : Wait for services to be up or for 120 retries
     timeout(5) 
               }
+
 }
-      }
-  }
