@@ -11,7 +11,7 @@ node{
 
   //Stage 1 : Build the docker image.
         stage('Build image') {
-            sh("docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD")
+            sh("docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_PASSWORD")
             sh("docker build -t sharlton/${imageTag} wordpress_app/.")
         }
     //Stage 2 : Testing the code.
